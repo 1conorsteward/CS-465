@@ -1,0 +1,17 @@
+[
+    {
+        "name" : "Gale Reef",
+        "image" : "reef1.jpg",
+        "description" : "<p>Gale Reef is a fabulous diving destination! Resorts also frequently have low cost massages and a wonderful beach view."
+    },
+    {
+        "name" : "Dawson's Reef",
+        "image" : "reef2.jpg",
+        "description" : "<p>Dawson's Reef is a must see. Exotic fish, fun cocktails, and truly breathtaking scenery are on full display."
+    },
+    {
+        "name" : "Claire's Reef",
+        "image" : "reef3.jpg",
+        "description" : "<p>Claire's Reef is a vivid reimagining of just how wonderful you vacation could be."
+    }
+]
