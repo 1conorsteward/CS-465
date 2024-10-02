@@ -16,13 +16,13 @@
                         <div class="body">
                             <h1>Travel</h1>
                             <ul id="sites">
-                                {{#each trips}}
+             {{#each trips}}
                                 <li>
-                                    <a href="/travel"><img src="images/{{this.image}}" alt="Img"></a>
+                                    <a href="/api/trips/{{this.code}}"><img src="images/{{this.image}}" alt="this.name"></a>
                                     <h2><a href="/travel">{{this.name}}</a></h2>
                                     {{{this.description}}}
                                 </li>
-                                {{/each}}
+             {{/each}}
                             </ul>
                         </div>
                     </div>
