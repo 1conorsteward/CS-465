@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-12 col-md-8">
+      <h2>Login</h2>
+      <form (ngSubmit)="onLoginSubmit($event)">
+        <!-- Display form error if any -->
+        <div role="alert" *ngIf="formError" class="alert alert-danger">{{ formError }}</div>
+  
+        <!-- Email Input -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" class="form-control"
+                 id="email" name="email" placeholder="Enter email address"
+                 [(ngModel)]="credentials.email" required>
+        </div>
+  
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control"
+                 id="password" name="password" placeholder="e.g 12+ alphanumerics"
+                 [(ngModel)]="credentials.password" required>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Sign In!</button>
+      </form>
+    </div>
+  </div>
+  
