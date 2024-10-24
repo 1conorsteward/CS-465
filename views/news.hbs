@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel News | Travlr Getaways</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-logged-in="{{isLoggedIn}}"> <!-- Ensure isLoggedIn is passed to body -->
+    {{> header}}
+
+    <!-- Login/Registration Modals -->
+    {{> loginModal}}
+    {{> registrationModal}} 
+
+    <main>
+        <h1>Travel News</h1>
+        <p>Stay updated with the latest travel news and upcoming trips. Discover new destinations, travel tips, and exciting offers to make your next adventure unforgettable!</p>
+    </main>
+
+    {{> footer}}
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

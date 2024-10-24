@@ -1,0 +1,18 @@
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form" action="/auth/login" method="POST">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" required> <!-- ID updated to match JS -->
+            
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required> <!-- ID updated to match JS -->
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>or</p>
+        <button id="register-button">Register</button>
+    </div>
+</div>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-logged-in="{{isLoggedIn}}">
+    {{> header}}
+
+    <!-- Login/Registration Modals -->
+    {{> loginModal}}
+    {{> registrationModal}}
+    
+    <main>
+        <h1>Your Reservations</h1>
+        <div id="reservations-list">
+            <!-- User reservations will be loaded dynamically here -->
+        </div>
+
+        <h2>Available Trips</h2>
+        <div class="travel-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Destination</th>
+                        <th>Length of Stay</th>
+                        <th>Start Date</th>
+                        <th>Resort</th>
+                        <th>Price per Person</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="trip-rows">
+    {{#each trips}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{destination}}</td>
+            <td>{{lengthOfStay.nights}} nights / {{lengthOfStay.days}} days</td>
+            <td>{{startDate}}</td>
+            <td>{{resort}}</td>
+            <td>${{pricePerPerson}}</td>
+            <td class="action-buttons">
+                {{#if isLoggedIn}}
+                    <!-- Show Reserve button instead of edit/delete -->
+                    <button class="res-trip-btn" data-trip-id="{{_id}}">Reserve</button>
+                {{/if}}
+            </td>
+        </tr>
+    {{/each}}
+</tbody>
+
+            </table>
+        </div>
+    </main>
+
+    {{> footer}}
+
+    <!-- Load external scripts for handling reservation logic -->
+    <script src="/js/main.js"></script> <!-- General app logic -->
+    <script src="/js/reservations.js"></script> <!-- Reservation-specific logic -->
+</body>
+</html>

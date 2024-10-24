@@ -1,0 +1,27 @@
+<div id="register-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="register-form" action="auth/register" method="POST" novalidate>
+            <label for="name">* Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="register-email">* Email:</label>
+            <input type="email" id="register-email" name="email" required> <!-- ID updated to match JS -->
+            
+            <label for="register-password">* Password:</label>
+            <input type="password" id="register-password" name="password" required> <!-- ID updated to match JS -->
+            
+            <label for="register-confirm-password">* Re-type password:</label>
+            <input type="password" id="register-confirm-password" name="confirmPassword" required> <!-- ID updated to match JS -->
+
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="#">Learn more</a>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travlr Getaways</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    {{> header}}
+
+    <main>
+        <div class="hero">
+            <!-- Dynamically load trip images from MongoDB -->
+            <div id="trip-images" class="trip-images">
+                {{#each trips}}
+                    <div class="trip-card">
+                        <img src="/images/{{this.image}}" alt="{{this.destination}}">
+                        <h2>{{this.destination}}</h2>
+                        <p>Stay: {{this.lengthOfStay.nights}} nights, {{this.lengthOfStay.days}} days</p>
+                        <p>Resort: {{this.resort}}</p>
+                        <p>Price: ${{this.pricePerPerson}} per person</p>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Login/Registration Modal -->
+        {{> loginModal}}
+        {{> registrationModal}}  
+
+    </main>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+
+    <script>
+        // JavaScript to handle login modal
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('login-modal');
+            const loginLink = document.querySelector('#login-link');
+            const closeButton = document.querySelector('.close-button');
+            
+            // Show the login modal when the login link is clicked
+            loginLink.onclick = () => modal.style.display = 'block';
+
+            // Close the login modal when the close button is clicked
+            closeButton.onclick = () => modal.style.display = 'none';
+
+            // Close the login modal if the user clicks outside of it
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+
+            // Handle registration logic (not implemented)
+            document.getElementById('register-button').onclick = () => {
+                alert('Registration form will be displayed here.');
+            };
+
+            // Handle login form submission
+            const loginForm = document.getElementById('login-form');
+            loginForm.onsubmit = async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                try {
+                    // Send the login credentials to the server
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        // Successful login
+                        alert('Login successful!');
+                        modal.style.display = 'none'; // Close the modal
+                        window.location.reload(); // Reload the page or redirect the user
+                    } else {
+                        // Login failed, show error message
+                        alert(result.message || 'Login failed. Please check your credentials.');
+                    }
+                } catch (error) {
+                    console.error('Error during login:', error);
+                    alert('An error occurred. Please try again.');
+                }
+            };
+        });
+    </script>
+    {{> footer}}
+</body>
+</html>

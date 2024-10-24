@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "destination": "Hawaii",
+        "lengthOfStay": {"nights": 7, "days": 5},
+        "startDate": "2024-06-01",
+        "resort": "Luxury Beach Resort",
+        "pricePerPerson": 1500,
+        "image": "hawaii.jpg"
+    },
+    {
+        "id": "2",
+        "destination": "Bali",
+        "lengthOfStay": {"nights": 5, "days": 4},
+        "startDate": "2024-07-15",
+        "resort": "Tropical Villa",
+        "pricePerPerson": 1200,
+        "image": "bali.jpg"
+    },
+    {
+        "id": "3",
+        "destination": "Cancun",
+        "lengthOfStay": {"nights": 3, "days": 2},
+        "startDate": "2024-03-15",
+        "resort": "Surf Nest",
+        "pricePerPerson": 800,
+        "image": "cancun.jpg"
+    },
+    {
+        "id": "4",
+        "destination": "Phillipines",
+        "lengthOfStay": {"nights": 7, "days": 6},
+        "startDate": "2024-01-15",
+        "resort": "Beachside Resort",
+        "pricePerPerson": 1800,
+        "image": "philli.jpg"
+    },
+    {
+        "id": "5",
+        "destination": "Monaco",
+        "lengthOfStay": {"nights": 8, "days": 7},
+        "startDate": "2024-02-15",
+        "resort": "Hotel Rissoto",
+        "pricePerPerson": 3000,
+        "image": "monaco.jpg"
+    }
+]

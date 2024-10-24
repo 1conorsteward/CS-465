@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Travlr Getaways</title>
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Corp Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/travel">Travel</a></li>
+                <li><a href="/news">News</a></li>
+                {{#if isLoggedIn}}
+                    <li><a href="/reservations">Reservations</a></li>
+                {{/if}}
+                <li><a href="/checkout">Checkout</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="/cart"><i class="fa fa-shopping-cart"></i></a>
+                <a href="#" id="login-link">Login</a>
+            </div>
+        </nav>
+    </header>
+    <main>
